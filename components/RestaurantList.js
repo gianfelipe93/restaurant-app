@@ -1,6 +1,6 @@
 import react from 'react'
 import { FlatList, StyleSheet, View, Text } from 'react-native'
-import Restaurant from './Restaurant'
+import RestaurantCard from './RestaurantCard'
 
 const RestaurantList = ({ title = '', data = '' }) => {
   return (
@@ -9,7 +9,7 @@ const RestaurantList = ({ title = '', data = '' }) => {
       <FlatList
         data={data}
         keyExtractor={item => item.id}
-        renderItem={x => <Restaurant imgURL={x.item.image_url} reviewCount={x.item.review_count} rating={x.item.rating} name={x.item.name} />}
+        renderItem={x => <RestaurantCard imgURL={x.item.image_url} reviewCount={x.item.review_count} rating={x.item.rating} name={x.item.name} id={x.item.id} />}
         horizontal
         showsHorizontalScrollIndicator={false}
       />

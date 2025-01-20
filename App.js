@@ -5,6 +5,7 @@ import { View, Text } from 'react-native';
 import { createStaticNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
+import RestaurantDetailsScreen from './screens/RestaurantDetailsScreen';
 
 const commonStyle = {
   headerTitleAlign: 'center',
@@ -19,6 +20,9 @@ const RootStack = createNativeStackNavigator({
         title: "Business Search",
       }
     },
+    Details: {
+      screen: RestaurantDetailsScreen
+    }
   },
   screenOptions: commonStyle,
   initialRouteName: "Home"

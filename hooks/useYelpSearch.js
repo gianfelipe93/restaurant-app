@@ -27,6 +27,20 @@ const useYelpSearch = (searchTerm = '') => {
 
     }
 
+    const getBusinessDetails = async (businessId) => {
+        setLoading(true)
+
+        try {
+            const response = await yelp.get(`/search/${businessId}`)
+
+            setResults([response.data])
+        } catch (err) {
+            setError(err)
+        } finally {
+            setLoading(false)
+        }
+    }
+
     useEffect(() => {
         search()
     }, [])
@@ -35,7 +49,8 @@ const useYelpSearch = (searchTerm = '') => {
         loading,
         error,
         results,
-        search
+        search,
+        getBusinessDetails
     }
 }
 

@@ -24,7 +24,6 @@ const HomeScreen = () => {
         })
     }
 
-
     return (
         <ScrollView style={styles.container}>
             <SearchBar onSearchTermChange={onSearchTermChange} searchTerm={searchTerm} onSearchSubmitted={onSearchSubmitted} />
